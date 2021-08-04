@@ -1,6 +1,7 @@
 import discord, asyncio, random #모듈 불러오기
-token = "ODcxOTk0NTkwMjA5NjQ2NjMy.YQjaPw.o1Wf-q01GCx9s4d2w3QeOEQxXaU" #봇 토큰 설정하기
+token = "access_token" #봇 토큰 설정하기
 client = discord.Client() #client 설정하기
+import os
 
 @client.event 
 async def on_ready(): #봇이 준비되었을때
@@ -17,5 +18,5 @@ async def on_message(message): #사용자가 메세지를 입력했을때
     if message.content.startswith("좆냥"): #만일 사용자가 "사랑해" 라고 입력했을때
         await message.channel.send(random.choice(['찌발련아','꺼져','ㅋ','어쩔','ㅗ','시벨롬ㅋ','아ㅋㅋ']))
 
-
+access_token = os.environ["BOT_TOKEN]
 client.run(token)
